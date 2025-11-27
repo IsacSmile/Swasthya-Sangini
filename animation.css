@@ -1,0 +1,37 @@
+/* Hero Bounce Animation  */
+.bounce {
+  animation: bounceAnim 8s ease-in-out infinite;
+}
+
+@keyframes bounceAnim {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px); /* logo goes up */
+  }
+  100% {
+    transform: translateY(0); /* comes back down */
+  }
+}
+
+/* this animation for the hero girl image */
+
+.bounce-girl {
+  animation: bounceAnimm 8s ease-in-out infinite;
+}
+
+@keyframes bounceAnimm {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* logo goes up */
+  }
+  100% {
+    transform: translateY(0); /* comes back down */
+  }
+}
+
+
+

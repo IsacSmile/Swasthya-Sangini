@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+/* ======================================
+   ROOT VARIABLES
+   ====================================== */
+:root {
+  --bg: #f8f6ef;
+  --heading: #18284a;
+  --text: rgba(46, 46, 46, 0.82);
+
+  --accent-from: #fb6f4e;
+  --accent-to: #fd976e;
+  --accent-shadow: rgba(251, 111, 78, 0.66);
+  --accent-shadow-soft: rgba(251, 111, 78, 0.38);
+
+  --radius: 12px;
+  --container-max: 1300px;
+
+  --heading-font: "Lato", sans-serif;
+  --text-font: "Lato", sans-serif;
+
+  --text-line-height: 1.6rem;
+  --text-size: 18px;
+
+  --h1-size: 45px;
+  --small-heading-size: 16px;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* ======================================
+   GLOBAL BASE STYLES
+   ====================================== */
+body {
+  background: var(--bg);
+  margin: 0;
+  font-family: var(--text-font);
+  color: var(--text);
+  line-height: var(--text-line-height);
+   outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  /* -webkit-user-select: none; */
+  /* user-select: none;  */
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+/* ======================================
+   PRIMARY CONTAINER (1300px center)
+   ====================================== */
+.primary-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+
+
+/* ======================================
+   TEXT STYLING (use whenever writing text)
+   ====================================== */
+.text-style {
+  font-size: var(--text-size);
+  font-family: var(--text-font);
+  color: var(--text);
+  line-height: var(--text-line-height);
+  letter-spacing: .5px;
+}
+
+
+
+/* ======================================
+   HEADINGS
+   ====================================== */
+
+/* Main heading — no border bottom */
+.primary-heading {
+  font-size: var(--h1-size);
+  line-height: 1.2;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: var(--heading);
+  margin: 0 0 10px 0;
+  font-family: var(--heading-font);
+}
+
+/* Smaller title — with border bottom */
+.small-heading {
+  display: inline-block;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #df7258;
+  font-size: var(--small-heading-size);
+  font-weight: 700;
+  color: var(--heading);
+  padding-bottom: 4px;
+}
+
+
+
+/* ======================================
+   BUTTONS
+   ====================================== */
+
+/* PRIMARY BUTTON */
+.primary-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  background-image: linear-gradient(118deg, var(--accent-from), var(--accent-to));
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-decoration: none;
+  box-shadow: 0 8px 20px -8px var(--accent-shadow);
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+}
+
+.primary-btn:hover {
+  box-shadow: 0 11px 40px -8px rgba(251, 111, 78, 0.43);
+  transform: translate3d(0, 0, 10px);
+  transform: scale(1.03);
+}
+
+
+
+/* SECONDARY (OUTLINED) BUTTON */
+.secondary-btn {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  border: 2px solid var(--accent-from);
+  border-radius: var(--radius);
+  background: transparent;
+  font-weight: 600;
+  color: var(--accent-from);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: 0.2s;
+  box-shadow: 0 10px 40px -13px var(--accent-shadow-soft);
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: linear-gradient(118deg, var(--accent-from), var(--accent-to));
+  color: #fff !important;
+  box-shadow: 0 11px 40px -8px rgba(251, 111, 78, 0.43);
+  transform: translate3d(0, 0, 10px);
+}
+
+
+
+/* ======================================
+   RESPONSIVE MEDIA QUERIES
+   ====================================== */
+
+/* MOBILE */
+@media (max-width: 767px) {
+  :root {
+    --h1-size: 28px;
+    --text-size: 15px;
+    --container-max: 100%;
+  }
+.primary-container{
+        padding: 0px 0.7rem;
+
+}
+  .primary-btn {
+    padding: 0.9em 1.6em;
+  }
+
+  .secondary-btn {
+    padding: 0.7em 1.3em;
+  }
+}
+
+
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991px) {
+  :root {
+    --h1-size: 34px;
+    --container-max: 1100px;
+  }
+}
+
+
+
+/* LAPTOP */
+@media (min-width: 992px) and (max-width: 1399px) {
+  :root {
+    --h1-size: 42px;
+    --container-max: 1300px;
+  }
+}
+
+
+
+/* DESKTOP */
+@media (min-width: 1400px) {
+  :root {
+    --h1-size: 45px;
+  }
+}
