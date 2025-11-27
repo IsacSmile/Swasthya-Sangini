@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<head>
   <meta charset="UTF-8">
+
+  <!-- RESPONSIVE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Swasthy Sangini</title>
+
+  <!-- TITLE (SEO Friendly) -->
+  <title>Swasthya Sangini | Yoga, Face Yoga & Wellness Classes Online</title>
+
+  <!-- META DESCRIPTION -->
+  <meta name="description" 
+    content="Join Swasthya Sangini for online Yoga, Face Yoga, and wellness programs. Improve flexibility, reduce stress, and enhance natural glow through guided daily sessions.">
+
+  <!-- KEYWORDS (optional but still helpful) -->
+  <meta name="keywords"
+    content="yoga classes, face yoga, online yoga, wellness, meditation, flexibility training, stress relief, Swasthya Sangini">
+
+  <!-- AUTHOR -->
+  <meta name="author" content="Swasthya Sangini">
+
+  <!-- CANONICAL (prevents duplicate content issues) -->
+  <link rel="canonical" href="https://your-domain.com/">
+
+  <!-- OPEN GRAPH (Facebook, Instagram, LinkedIn preview) -->
+  <meta property="og:title" content="Swasthya Sangini | Yoga & Face Yoga Classes">
+  <meta property="og:description" content="Daily Yoga & Face Yoga sessions to heal, strengthen, and glow naturally. Join the journey of balance and wellness.">
+  <meta property="og:image" content="https://your-domain.com/images/og-image.jpg">
+  <meta property="og:url" content="https://your-domain.com/">
+  <meta property="og:type" content="website">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Swasthya Sangini | Yoga & Face Yoga Classes">
+  <meta name="twitter:description" content="Calm your mind, nourish your skin, and strengthen your body with guided online sessions.">
+  <meta name="twitter:image" content="https://your-domain.com/images/og-image.jpg">
+
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="./images/favicon_io/favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="root.css">
   <link rel="stylesheet" href="animation.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="formspree.css">
+  <link rel="stylesheet" href="formspree.css">
+
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- PRECONNECTS (speed boost for Google Fonts / CDNs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- OPTIONAL: GOOGLE FONTS -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> -->
+
+</head>
+
 </head>
 
 <body>
@@ -58,7 +106,7 @@
             </div>
           </div>
         </div>
-        <video class="video-ctrl" src="./images/videos/yoga-video.mp4" controls></video>
+        <video class="video-ctrl lazy-video-top" src="./images/videos/yoga-video-1.mp4" controls></video>
       <!-- <iframe 
           class="video-ctrl" 
           src="https://www.youtube.com/embed/18dlwB6KvW0?si=lQX334GVMW2UESxr&autoplay=1"
@@ -375,7 +423,7 @@
                  <section class="faq-section primary-container">
                     <div class="faq-header">
                         <span class="faq-tag">FAQ</span>
-                        <div class="faq-head"><img src="./images/hero-component-1.svg" alt=""><h2 class="faq-title">Frequently Asked Questions</h2></div>
+                        <div class="faq-head"><img src="./images/hero-component-1.svg" alt="icon_images" loading="lazy"><h2 class="faq-title">Frequently Asked Questions</h2></div>
                         <p class="faq-subtitle">Feel free to ask questions at <a href="mailto:hello@yogaplus.com">hello@yogaplus.com</a></p>
                     </div>
 
@@ -604,5 +652,6 @@
         </script>
 
   <script src="index.js"></script>
+  <script src="lazy.js"></script>
 </body>
 </html>

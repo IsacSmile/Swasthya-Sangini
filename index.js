@@ -7,6 +7,7 @@ hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
 
+
 // VIDEO ELEMENT
 const video = document.querySelector(".video-ctrl");
 
@@ -20,7 +21,6 @@ let closeBtn = null;
 
 // FUNCTION: SHOW VIDEO
 function showVideo() {
-  // create overlay only once
   if (!videoOverlay) {
     videoOverlay = document.createElement("div");
     videoOverlay.classList.add("video-overlay");
@@ -319,47 +319,105 @@ faqItems.forEach(item => {
 
 
 
-
-// Testimonials 
-// Testimonials Image Data
-const testimonialData = [
+// Testimonials Starts Here - Images + Video
+// Row 1 → IMAGES
+const imageData = [
   { img: "./images/feedback/testi-1.jpeg" },
   { img: "./images/feedback/testi-2.jpeg" },
   { img: "./images/feedback/testi-3.jpeg" },
   { img: "./images/feedback/testi-4.jpeg" },
   { img: "./images/feedback/testi-5.jpeg" },
-  { img: "./images/feedback/testi-6.jpeg" },
-  { img: "./images/feedback/testi-1.jpeg" },
-  { img: "./images/feedback/testi-2.jpeg" },
-  { img: "./images/feedback/testi-3.jpeg" },
-  { img: "./images/feedback/testi-4.jpeg" },
-  { img: "./images/feedback/testi-5.jpeg" },
-  { img: "./images/feedback/testi-6.jpeg" },
+  { img: "./images/feedback/testi-6.jpeg" }
 ];
 
-// Duplicate images to create a long loop
-const loopData = [...testimonialData, ...testimonialData];
+// Row 2 → VIDEOS
+const videoData = [
+  { video: "./images/videos/yoga-video-1.mp4" },
+  { video: "./images/videos/yoga-video-2.mp4" },
+  { video: "./images/videos/yoga-video-3.mp4" },
+  { video: "./images/videos/yoga-video-4.mp4" },
+  { video: "./images/videos/yoga-video-2.mp4" },
+  { video: "./images/videos/yoga-video-3.mp4" }
+];
+
+// Duplicate for infinite scroll
+const row1Data = [...imageData, ...imageData];
+const row2Data = [...videoData, ...videoData];
 
 const row1 = document.getElementById("row1");
 const row2 = document.getElementById("row2");
 
-// Row 1
-loopData.forEach(item => {
+// ------------------------
+// RENDER ROW 1 (IMAGES)
+// ------------------------
+row1Data.forEach(item => {
   row1.innerHTML += `
     <div class="testimonial-card">
-      <img src="${item.img}" class="testimonial-img" alt="testimonial" />
+      <img 
+        data-src="${item.img}" 
+        class="testimonial-img lazy-img" 
+        alt="testimonial"
+      />
     </div>
   `;
 });
 
-// Row 2
-loopData.forEach(item => {
+// ------------------------
+// RENDER ROW 2 (VIDEOS)
+// ------------------------
+row2Data.forEach(item => {
   row2.innerHTML += `
     <div class="testimonial-card">
-      <img src="${item.img}" class="testimonial-img" alt="testimonial" />
+      <video 
+        data-src="${item.video}"
+        class="testimonial-video lazy-video"
+        muted 
+        playsinline 
+        loop
+      ></video>
     </div>
   `;
 });
+
+// ------------------------------------------------
+// LAZY LOADING FOR IMAGES
+// ------------------------------------------------
+const lazyImages = document.querySelectorAll(".lazy-img");
+
+const imageObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src; // load image
+      img.classList.remove("lazy-img");
+      obs.unobserve(img);
+    }
+  });
+}, { threshold: 0.2 });
+
+lazyImages.forEach(img => imageObserver.observe(img));
+
+// ------------------------------------------------
+// LAZY LOADING FOR VIDEOS
+// ------------------------------------------------
+const lazyVideos = document.querySelectorAll(".lazy-video");
+
+const videoObserver = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const video = entry.target;
+      video.src = video.dataset.src;  // load video
+      video.play();                   // start autoplay
+      obs.unobserve(video);
+    }
+  });
+}, { threshold: 0.2 });
+
+lazyVideos.forEach(video => videoObserver.observe(video));
+
+
+
+
 
 
 
@@ -390,3 +448,8 @@ form.addEventListener("submit", async function (e) {
     window.location.href = window.location.href;
   }, 3000);
 });
+
+
+
+// lazy loading
+ 
