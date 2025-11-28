@@ -1288,7 +1288,7 @@
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .testimonial-card {
-    min-width: 180px;
+    /* min-width: 180px; */
     max-width: 180px;
   }
 
@@ -1563,7 +1563,7 @@
 
 /* Universal card styling */
 .testimonial-card {
-  min-width: 240px;
+  /* min-width: 240px; */
   max-width: 240px;
   height: 240px;
   border-radius: 12px;
@@ -1581,7 +1581,7 @@
 
 /* Video */
 .testimonial-video {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   object-fit: contain;
 }
@@ -1600,7 +1600,7 @@
 /* Responsive tweak */
 @media (max-width: 600px) {
   .testimonial-card {
-    min-width: 180px;
+    /* min-width: 180px; */
     max-width: 180px;
     height: 180px;
   }
